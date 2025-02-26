@@ -333,6 +333,32 @@ class PlatinumQuestGame(Game):
                         weight=1,
                     )
                 )
+            
+            if "Expert" in self.difficulties:
+                templates.append(
+                    GameObjectiveTemplate(
+                        label="Beat the Platinum Score in LEVEL from Level Pack: Hunt Expert",
+                        data={
+                            "LEVEL": (self.levels_hunt_expert, 1),
+                        },
+                        is_time_consuming=False,
+                        is_difficult=True,
+                        weight=1,
+                    )
+                )
+
+            if "Bonus" in self.difficulties:
+                templates.append(
+                    GameObjectiveTemplate(
+                        label="Beat the Platinum Score in LEVEL from Level Pack: Hunt Bonus",
+                        data={
+                            "LEVEL": (self.levels_hunt_bonus, 1),
+                        },
+                        is_time_consuming=False,
+                        is_difficult=True,
+                        weight=1,
+                    )
+                )
 
         if "Hunt Snow" in self.level_packs:
             if "Beginner" in self.difficulties:
@@ -904,122 +930,176 @@ class PlatinumQuestGame(Game):
     def levels_hunt_beginner() -> List[str]:
         return [
             "King of the Marble",
+            "King of the Ring",
             "Hunting Around",
-            "Triple Decker",
-            "Playground",
+            "Inferno Ring",
             "Sprawl",
-            "Cube Isle",
-            "Gems Ahoy!",
-            "Blast Club",
-            "Maximo Center",
-            "Bowl",
+            "Playground",
             "Marble Agility Course",
+            "Blast Club",
             "Marble City",
-            "Gravity Tower",
-            "Battlecube",
+            "Gems Ahoy!",
+            "Triple Decker",
+            "Acropolis 2",
+            "Maximo Center",
+            "Cube Isle",
+            "Bowl",
             "Triumvirate",
-            "Apex",
+            "Battlecube",
         ]
 
     @staticmethod
     def levels_hunt_intermediate() -> List[str]:
         return [
-            "Basic Agility Course",
-            "All Angles",
-            "Exoplanet",
-            "Ziggurat",
+            "Duplex",
+            "Centroid",
             "Gem Finding Folly",
-            "Marble It Up!",
-            "Marbleland",
-            "Gems in the Road",
-            "Outlook",
-            "Epicenter",
+            "Ziggurat",
+            "Requisite",
+            "Points of the Radar",
+            "All Angles",
+            "Skatium",
+            "Cragmire",
+            "Fun in the Sun",
+            "Apex",
             "Triple Trail",
             "Skate Battle Royale",
-            "Tilo",
-            "Sweep",
-            "Terrace Tundra",
-            "Vortex Effect",
-            "Battlecube Revisited",
             "Core",
-            "Ramps Revamped",
+            "Brown Hills",
+            "Gems in the Road",
+            "Skate Park Square",
+            "Vortex Effect",
+            "Outlook",
+            "Epicenter",
+            "Marbleland",
+            "Marble It Up!",
+            "Battlecube Revisited",
         ]
 
     @staticmethod
     def levels_hunt_advanced() -> List[str]:
         return [
-            "Skate Park Square",
-            "Lupus",
             "Horizon",
-            "Wonky Waters",
-            "Platinum Construction Co.",
-            "Par Pit",
             "Concentric",
-            "Architecture",
+            "Pyramid",
+            "Treasure Box",
+            "Tilo",
+            "Sweep",
+            "Lupus",
             "Vibrancy Grounds",
+            "Promontory",
+            "Terrace Tundra",
+            "Ramps Revamped",
+            "Nadir",
+            "Megas",
+            "Par Pit",
+            "Architecture",
+            "Zenith",
             "Eye of the Storm",
             "Sacred",
             "Citadel",
-            "Promontory",
-            "Nadir",
-            "Zenith",
-            "Megas",
-            "Pyramid",
+        ]
+
+    @staticmethod
+    def levels_hunt_expert() -> List[str]:
+        return [
+            "Platinum Construction Co.",
+            "Prophetic",
+            "Basin Hill",
             "Parkour Peaks",
             "Spires",
         ]
 
     @staticmethod
+    def levels_hunt_bonus() -> List[str]:
+        return [
+            "Agility",
+            "Hikaru's V Shape",
+            "Good to be King",
+            "Triple Deckers",
+            "Incidious",
+            "Archipelago",
+            "Grassy",
+            "Quartile",
+            "Rink Ring",
+            "Timbertown",
+            "Green Resort",
+            "Gravity Tower",
+            "Sprawl Evolved",
+            "Layered",
+            "Sphere Plates",
+            "Green Mess",
+            "Landscape",
+            "Poolside Panic",
+            "Gym",
+            "Blender: Chop",
+            "Wrap Zone",
+            "Wonky Waters",
+            "Meridian",
+            "Exoplanet",
+            "Mogul",
+            "Heart of the Typhoon",
+            "Two Levels",
+            "Fault Line",
+            "Ring",
+            "The Dragon Room",
+            "SkillPlex",
+            "Nukesweeper Revisted",
+            "Polysoup",
+        ]
+
+    @staticmethod
     def levels_hunt_snow_beginner() -> List[str]:
         return [
-            "King of the Marble",
-            "Playground",
-            "Sprawl",
-            "Hunting Around",
-            "Gems Ahoy!",
-            "Blast Club",
-            "Bowl",
-            "Marble City",
-            "Battlecube",
-            "Triumvirate",
-            "Maximo Center",
+            "Kring of the Marble",
+            "Sleighground",
+            "Sprawliday Special",
+            "Hanukk Around",
+            "Gems, Ho Ho Ho!",
+            "Blessed Club",
+            "Nog Bowl",
+            "Snowball City",
+            "Tinselcube",
+            "Treeumvirate",
+            "Maximart Supercenter",
             "Snow Brawl",
+            "King of the Rink",
         ]
 
     @staticmethod
     def levels_hunt_snow_intermediate() -> List[str]:
         return [
-            "Basic Agility Course",
-            "All Angles",
-            "Ziggurat",
-            "Gems in the Road",
-            "Marble It Up!",
-            "Gem Finding Folly",
-            "Epicenter",
-            "Skate Battle Royale",
-            "Vortex Effect",
-            "Battlecube Revisited",
-            "Core",
-            "Marbleland",
-            "Terrace Tundra",
+            "Basic Angelity Course",
+            "All Angels",
+            "Krampus's Lair",
+            "Gingerbread Road",
+            "Carol It Up!",
+            "Gem Finding Flurry",
+            "Festivecenter",
+            "Snow Tubing Battle Royale",
+            "Polar Vortex",
+            "Tinselcube Regifted",
+            "Coal",
+            "Jingleland",
+            "Tiding Tundra",
         ]
 
     @staticmethod
     def levels_hunt_snow_advanced() -> List[str]:
         return [
-            "Horizon",
-            "Par Pit",
-            "Concentric",
-            "Architecture",
-            "Promontory",
-            "Zenith",
-            "Spires",
-            "Lupus",
-            "Nadir",
+            "Deck the Horizon",
+            "Present Pit",
+            "Consantaric",
+            "Up on the Rooftop",
+            "Peppermintory",
+            "Snowcap",
+            "Poles",
+            "Tarandrus",
+            "Reinadir",
+            "Snow Tube Square",
             "Wintry Village",
             "Concavity Duex",
             "Winter's Rage",
-            "Skate Park Square",
         ]
 
     @staticmethod
@@ -1027,34 +1107,34 @@ class PlatinumQuestGame(Game):
         return [
             "Covert Cryptball",
             "King of the Ghosts",
-            "Ghastly Graveyard",
             "Creepy Grounds",
             "Uncovered Crypt",
             "Pumpkin City",
             "Ghosts Ahoy!",
+            "Ghastly Graveyard",
         ]
 
     @staticmethod
     def levels_hunt_fright_intermediate() -> List[str]:
         return [
-            "Precarious Patch",
             "Fallen Angels",
-            "Sinister Stronghold",
             "Spookicenter",
             "Spookyland",
             "Frightful Roads",
+            "Precarious Patch",
+            "Sinister Stronghold",
             "Melancholia Morass",
         ]
 
     @staticmethod
     def levels_hunt_fright_advanced() -> List[str]:
         return [
-            "Vacuous Village",
             "BLOODY BATTLE SEWERS",
             "Abandonded Warehouse",
             "Necropolis",
             "Lake Pungent",
             "Bat Megalopolis",
+            "Vacuous Village",
         ]
 
 
@@ -1091,6 +1171,7 @@ class PlatinumQuestDifficulties(OptionSet):
         "Intermediate",
         "Advanced",
         "Expert",
+        "Bonus",
     ]
 
     default = valid_keys
